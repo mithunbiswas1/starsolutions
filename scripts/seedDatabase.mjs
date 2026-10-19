@@ -16,7 +16,7 @@ import { Setting } from "../src/models/setting.model.js";
 // Ensure Atlas SRV resolves on local DNS
 try {
   dns.setServers(["8.8.8.8", "1.1.1.1", "8.8.4.4"]);
-} catch (e) {}
+} catch (e) { }
 
 const uri =
   process.env.MONGODB_URL ||
@@ -116,7 +116,7 @@ async function seed() {
     await HomeIndustry.insertMany([
       {
         title: "FinTech & Digital Banking",
-        description: "PCI-compliant payment gateways, core banking ledgers, digital wallets, and fraud prevention engines.",
+        description: "PCI-compliant payment gateways, core banking ledgers, and fraud prevention engines.",
         image: "/services/ui-ux-design/fintech.webp",
         order: 1,
         is_active: true,

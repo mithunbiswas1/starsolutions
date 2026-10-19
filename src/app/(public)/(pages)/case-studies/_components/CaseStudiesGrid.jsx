@@ -30,7 +30,7 @@ function CaseStudyCard({ study }) {
             </div>
           )}
           <div className="absolute top-3 left-3">
-            <span className="glass-badge bg-primary/20 backdrop-blur-md text-primary border border-primary/30 px-3 py-1 rounded-full text-xs font-semibold">
+            <span className="glass-badge bg-primary/20 backdrop-blur-md text-primary border border-primary/30 px-3 py-1 rounded-md text-xs font-semibold">
               {study.category || "Case Study"}
             </span>
           </div>
@@ -61,13 +61,13 @@ function CaseStudyCard({ study }) {
               {study.technologies?.slice(0, 3).map((tech, index) => (
                 <span
                   key={index}
-                  className="text-xs glass-badge bg-white/[0.04] border border-white/10 text-gray-300 px-2.5 py-0.5 rounded-full"
+                  className="text-xs glass-badge bg-white/[0.04] border border-white/10 text-gray-300 px-2.5 py-0.5 rounded-md"
                 >
                   {tech}
                 </span>
               ))}
               {study.technologies?.length > 3 && (
-                <span className="text-xs glass-badge bg-white/[0.04] border border-white/10 text-gray-400 px-2.5 py-0.5 rounded-full">
+                <span className="text-xs glass-badge bg-white/[0.04] border border-white/10 text-gray-400 px-2.5 py-0.5 rounded-md">
                   +{study.technologies.length - 3}
                 </span>
               )}

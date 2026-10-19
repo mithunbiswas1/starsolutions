@@ -11,9 +11,6 @@ export default function ChallengesSection({ challengesData }) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Heading */}
         <div className="max-w-3xl mb-12">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/[0.04] text-primary text-xs font-semibold uppercase tracking-wider mb-3 border border-white/10">
-            Addressing Key Bottlenecks
-          </div>
           <H2 className="font-extrabold text-white mb-4 text-3xl sm:text-4xl">
             {challengesData.heading}
           </H2>

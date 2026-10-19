@@ -22,7 +22,7 @@ function PricingCard({ plan }) {
           <h3 className="text-2xl font-bold text-white">{plan.name}</h3>
 
           {plan.badge && (
-            <span className="rounded-full bg-primary/20 border border-primary/30 px-3 py-1 text-xs font-semibold text-primary">
+            <span className="rounded-md bg-primary/20 border border-primary/30 px-3 py-1 text-xs font-semibold text-primary">
               {plan.badge}
             </span>
           )}
@@ -52,7 +52,7 @@ function PricingCard({ plan }) {
       <div className="pt-8 mt-6 border-t border-white/10">
         <Link href="/contact" className="block">
           <button
-            className={`h-14 w-full rounded-full font-bold transition-all duration-300 cursor-pointer ${
+            className={`h-14 w-full rounded-xl font-bold transition-all duration-300 cursor-pointer ${
               isHighlighted
                 ? "bg-primary text-black shadow-lg shadow-primary/20 hover:shadow-primary/40 hover:scale-[1.02]"
                 : "glass bg-white/10 text-white border border-white/20 hover:bg-white/20 hover:border-white/40"

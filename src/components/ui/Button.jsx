@@ -55,7 +55,8 @@ const buttonVariants = cva(
         xs: "px-3 py-1 leading-[100%] font-medium text-xs",
       },
       rounded: {
-        default: "rounded-full",
+        default: "rounded-xl",
+        xl: "rounded-xl",
         lg: "rounded-lg",
         md: "rounded-md",
         sm: "rounded-sm",

@@ -30,12 +30,7 @@ export default function BannerCarousel({ banners = [] }) {
 
   return (
     <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 min-h-[70vh] lg:min-h-screen flex flex-col justify-center pt-8 md:pt-16 text-center">
-      <div className="max-w-3xl mx-auto space-y-5">
-        {/* Subtle Glass Badge */}
-        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.06] text-primary text-xs font-semibold uppercase tracking-wider mb-2 border border-white/15 select-none backdrop-blur-md">
-          <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-          <span>{currentBanner?.badge || "Star Solutions • Star Solutions BD"}</span>
-        </div>
+      <div className="max-w-3xl mx-auto space-y-6">
 
         {/* Title with Framer Motion */}
         <AnimatePresence mode="wait">
@@ -62,7 +57,7 @@ export default function BannerCarousel({ banners = [] }) {
         </AnimatePresence>
 
         {/* Description with Framer Motion */}
-        <AnimatePresence mode="wait">
+        {/* <AnimatePresence mode="wait">
           <motion.div
             key={`desc-${currentIndex}`}
             initial={{ opacity: 0, y: 20 }}
@@ -75,7 +70,7 @@ export default function BannerCarousel({ banners = [] }) {
                 "Star Solutions (Star Solutions BD) architects mission-critical enterprise software, custom ERP, scalable web platforms, and mobile apps engineered for long-term growth."}
             </H6>
           </motion.div>
-        </AnimatePresence>
+        </AnimatePresence> */}
 
         {/* Action Buttons */}
         <div className="pt-4 flex flex-wrap gap-4 items-center justify-center">

@@ -9,9 +9,8 @@ function ProjectCard({ item, reverse }) {
     <div className="group grid lg:grid-cols-2 overflow-hidden rounded-2xl glass-dark bg-white/[0.03] backdrop-blur-xl border border-white/10 hover:border-primary/40 transition-all duration-500">
       {/* Image */}
       <div
-        className={`relative h-64 sm:h-80 lg:h-auto lg:min-h-[440px] overflow-hidden ${
-          reverse ? "lg:order-1" : "lg:order-2"
-        }`}
+        className={`relative h-64 sm:h-80 lg:h-auto lg:min-h-[440px] overflow-hidden ${reverse ? "lg:order-1" : "lg:order-2"
+          }`}
       >
         <Image
           src={item.image}
@@ -24,12 +23,10 @@ function ProjectCard({ item, reverse }) {
 
       {/* Content */}
       <div
-        className={`p-6 sm:p-10 lg:p-12 flex flex-col justify-center ${
-          reverse ? "lg:order-2" : "lg:order-1"
-        }`}
+        className={`p-6 sm:p-10 lg:p-12 flex flex-col justify-center ${reverse ? "lg:order-2" : "lg:order-1"
+          }`}
       >
         <div className="inline-flex items-center gap-2 mb-3">
-          <span className="w-1.5 h-1.5 rounded-full bg-primary" />
           <span className="text-xs font-semibold uppercase tracking-wider text-primary">
             Featured Case
           </span>
@@ -66,9 +63,6 @@ export default function ProjectsSection({ projectsData }) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         <div className="max-w-3xl mb-14">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/[0.04] text-primary text-xs font-semibold uppercase tracking-wider mb-3 border border-white/10">
-            Proven Track Record
-          </div>
           <H2 className="font-extrabold text-white mb-4 text-3xl sm:text-4xl">
             {projectsData.heading}
           </H2>

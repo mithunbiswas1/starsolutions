@@ -64,9 +64,6 @@ export default function SolutionFAQSection() {
         <div className="grid lg:grid-cols-2 gap-12 items-start">
           {/* Sticky Left Panel */}
           <div className="lg:sticky lg:top-24 h-fit">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/[0.04] text-primary text-xs font-semibold uppercase tracking-wider mb-3 border border-white/10">
-              Frequently Asked
-            </div>
             <H2 className="font-extrabold text-white mb-8 text-3xl sm:text-4xl">
               FAQ About ERP
             </H2>

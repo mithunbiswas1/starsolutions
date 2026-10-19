@@ -221,7 +221,7 @@ export default function Navbar({ settings }) {
         <div className="hidden lg:flex lg:justify-end">
           <Link
             href="/contact"
-            className="flex items-center justify-center gap-2 w-auto min-w-36 rounded-full bg-primary px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-primary transition-all duration-300"
+            className="flex items-center justify-center gap-2 w-auto min-w-36 rounded-xl bg-primary px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-primary transition-all duration-300"
           >
             <span>Contact Us</span>
           </Link>
@@ -345,7 +345,7 @@ export default function Navbar({ settings }) {
             {/* Only Mobile Contact Link */}
             <Link
               href="/contact"
-              className="mt-10 flex items-center justify-center gap-2 w-auto min-w-36 rounded-full bg-primary px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-primary transition-all duration-300"
+              className="mt-10 flex items-center justify-center gap-2 w-auto min-w-36 rounded-xl bg-primary px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-primary transition-all duration-300"
             >
               <span>Contact Us</span>
             </Link>

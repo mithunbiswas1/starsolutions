@@ -11,10 +11,6 @@ export default function ProjectsCTASection() {
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
         <div className="p-10 sm:p-14 rounded-3xl glass-dark bg-white/[0.03] backdrop-blur-xl border border-white/10 shadow-[0_0_50px_rgba(0,0,0,0.5)]">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/[0.04] text-primary text-xs font-semibold uppercase tracking-wider mb-4 border border-white/10">
-            Let's Collaborate
-          </div>
-
           <H2 className="text-white font-extrabold text-3xl sm:text-4xl">
             Have a Project in Mind?
           </H2>

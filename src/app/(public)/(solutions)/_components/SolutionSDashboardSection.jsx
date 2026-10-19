@@ -35,9 +35,8 @@ function DashboardCard({ item, reverse }) {
     <div className="rounded-2xl glass-dark bg-white/[0.03] backdrop-blur-xl border border-white/10 hover:border-primary/40 overflow-hidden grid lg:grid-cols-2 transition-all duration-500 group">
       {/* Image */}
       <div
-        className={`relative min-h-[280px] sm:min-h-[340px] lg:min-h-[400px] overflow-hidden ${
-          reverse ? "lg:order-2" : "lg:order-1"
-        }`}
+        className={`relative min-h-[280px] sm:min-h-[340px] lg:min-h-[400px] overflow-hidden ${reverse ? "lg:order-2" : "lg:order-1"
+          }`}
       >
         <Image
           src={item.image}
@@ -50,12 +49,10 @@ function DashboardCard({ item, reverse }) {
 
       {/* Content */}
       <div
-        className={`flex flex-col justify-center p-6 sm:p-10 lg:p-14 ${
-          reverse ? "lg:order-1" : "lg:order-2"
-        }`}
+        className={`flex flex-col justify-center p-6 sm:p-10 lg:p-14 ${reverse ? "lg:order-1" : "lg:order-2"
+          }`}
       >
         <div className="inline-flex items-center gap-2 mb-3">
-          <span className="w-1.5 h-1.5 rounded-full bg-primary" />
           <span className="text-xs font-semibold uppercase tracking-wider text-primary">
             Control Center
           </span>
@@ -82,9 +79,6 @@ export default function SolutionSDashboardSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header */}
         <div className="max-w-3xl mb-14">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/[0.04] text-primary text-xs font-semibold uppercase tracking-wider mb-3 border border-white/10">
-            Real-Time Intelligence
-          </div>
           <H2 className="font-extrabold text-white mb-4 text-3xl sm:text-4xl">
             Powerful ERP Dashboards for Smarter Decisions
           </H2>

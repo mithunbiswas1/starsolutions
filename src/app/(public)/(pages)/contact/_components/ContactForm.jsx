@@ -159,7 +159,7 @@ export default function ContactForm() {
       <button
         type="submit"
         disabled={isLoading}
-        className="h-16 w-full rounded-full bg-primary text-black text-lg font-bold transition-all duration-300 hover:shadow-[0_0_25px_rgba(46,208,110,0.4)] hover:scale-[1.01] disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 cursor-pointer"
+        className="h-16 w-full rounded-xl bg-primary text-black text-lg font-bold transition-all duration-300 hover:shadow-[0_0_25px_rgba(46,208,110,0.4)] hover:scale-[1.01] disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 cursor-pointer"
       >
         {isLoading ? (
           <>

@@ -34,7 +34,7 @@ const Badge = ({
   };
 
   const baseStyles =
-    "inline-flex items-center gap-1.5 font-medium rounded-full border transition-all duration-200";
+    "inline-flex items-center gap-1.5 font-medium rounded-lg border transition-all duration-200";
 
   return (
     <span

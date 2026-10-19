@@ -55,9 +55,6 @@ export default function AtAGlanceSection({ alliances }) {
       <div className="absolute top-1/2 left-1/3 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-primary/[0.06] rounded-full blur-[140px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/[0.04] text-primary text-xs font-semibold uppercase tracking-wider mb-4 border border-white/10">
-          Proven Global Track Record
-        </div>
         <H2 className="text-white font-extrabold text-3xl sm:text-4xl mb-10 lg:mb-14">
           Star Solutions BD Delivery At A Glance
         </H2>

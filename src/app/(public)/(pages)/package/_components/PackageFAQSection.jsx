@@ -75,7 +75,7 @@ export default function PackageFAQSection() {
 
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center px-8 py-4 bg-primary text-black font-bold rounded-full hover:shadow-[0_0_25px_rgba(46,208,110,0.4)] transition-all duration-300 hover:scale-[1.02]"
+                className="inline-flex items-center justify-center px-8 py-4 bg-primary text-black font-bold rounded-xl hover:shadow-[0_0_25px_rgba(46,208,110,0.4)] transition-all duration-300 hover:scale-[1.02]"
               >
                 Talk to the Team
               </Link>

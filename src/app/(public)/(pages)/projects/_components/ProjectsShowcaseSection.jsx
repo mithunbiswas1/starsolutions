@@ -13,9 +13,8 @@ function ProjectCard({ item, reverse }) {
     <div className="group grid lg:grid-cols-2 overflow-hidden rounded-2xl glass-dark bg-white/[0.03] backdrop-blur-xl border border-white/10 hover:border-primary/40 transition-all duration-500">
       {/* Image */}
       <div
-        className={`relative h-[260px] sm:h-[320px] lg:h-auto lg:min-h-[440px] overflow-hidden ${
-          reverse ? "lg:order-1" : "lg:order-2"
-        }`}
+        className={`relative h-[260px] sm:h-[320px] lg:h-auto lg:min-h-[440px] overflow-hidden ${reverse ? "lg:order-1" : "lg:order-2"
+          }`}
       >
         {item.thumbnail ? (
           <Image
@@ -34,13 +33,11 @@ function ProjectCard({ item, reverse }) {
 
       {/* Content */}
       <div
-        className={`flex flex-col justify-center p-6 sm:p-10 lg:p-12 ${
-          reverse ? "lg:order-2" : "lg:order-1"
-        }`}
+        className={`flex flex-col justify-center p-6 sm:p-10 lg:p-12 ${reverse ? "lg:order-2" : "lg:order-1"
+          }`}
       >
         {/* Category */}
         <div className="flex items-center gap-2 mb-3">
-          <span className="w-1.5 h-1.5 rounded-full bg-primary" />
           <span className="text-xs font-semibold tracking-wider uppercase text-primary">
             {item.category}
           </span>
@@ -62,7 +59,7 @@ function ProjectCard({ item, reverse }) {
           {item.technologies?.map((tech, techIndex) => (
             <span
               key={techIndex}
-              className="rounded-full bg-white/[0.04] text-gray-300 px-3 py-1 text-xs font-medium border border-white/10"
+              className="rounded-md bg-white/[0.04] text-gray-300 px-3 py-1 text-xs font-medium border border-white/10"
             >
               {tech}
             </span>
@@ -116,9 +113,6 @@ export default function ProjectsShowcaseSection({ projects }) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         <div className="max-w-3xl mb-14">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/[0.04] text-primary text-xs font-semibold uppercase tracking-wider mb-3 border border-white/10">
-            Portfolio In Action
-          </div>
           <H2 className="font-extrabold text-white mb-4 text-3xl sm:text-4xl">
             Our Success Stories
           </H2>
@@ -141,11 +135,10 @@ export default function ProjectsShowcaseSection({ projects }) {
                     <button
                       key={tab}
                       onClick={() => setActiveTab(tab)}
-                      className={`shrink-0 rounded-full px-4 py-2 text-xs sm:text-sm font-medium transition-all
-                        ${
-                          activeTab === tab
-                            ? "bg-primary text-black font-semibold shadow-lg shadow-primary/20"
-                            : "bg-white/[0.05] text-gray-300 hover:bg-white/10 border border-white/10"
+                      className={`shrink-0 rounded-xl px-4 py-2 text-xs sm:text-sm font-medium transition-all
+                        ${activeTab === tab
+                          ? "bg-primary text-black font-semibold shadow-lg shadow-primary/20"
+                          : "bg-white/[0.05] text-gray-300 hover:bg-white/10 border border-white/10"
                         }`}
                     >
                       {tab}
@@ -166,10 +159,9 @@ export default function ProjectsShowcaseSection({ projects }) {
                     key={tab}
                     onClick={() => setActiveTab(tab)}
                     className={`px-4 py-3 text-left text-sm rounded-xl transition-all duration-200
-                      ${
-                        activeTab === tab
-                          ? "bg-primary/15 text-primary border border-primary/30 font-semibold shadow-[0_0_15px_rgba(46,208,110,0.15)]"
-                          : "text-gray-300 hover:text-white hover:bg-white/[0.04] border border-transparent"
+                      ${activeTab === tab
+                        ? "bg-primary/15 text-primary border border-primary/30 font-semibold shadow-[0_0_15px_rgba(46,208,110,0.15)]"
+                        : "text-gray-300 hover:text-white hover:bg-white/[0.04] border border-transparent"
                       }`}
                   >
                     {tab}

@@ -71,7 +71,7 @@ function StepCard({ step, index }) {
       </div>
 
       <div className="mt-8 pt-4 border-t border-white/5 flex items-center gap-2">
-        <span className="w-1.5 h-1.5 rounded-full bg-primary/40 group-hover:bg-primary transition-colors" />
+
         <span className="text-xs text-gray-400 uppercase tracking-wider font-mono">Phase {step.number}</span>
       </div>
     </div>
@@ -87,9 +87,6 @@ export default function SolutionImplementationSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header */}
         <div className="max-w-3xl mb-14">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/[0.04] text-primary text-xs font-semibold uppercase tracking-wider mb-3 border border-white/10">
-            Proven Deployment Framework
-          </div>
           <H2 className="font-extrabold text-white mb-4 text-3xl sm:text-4xl">
             ERP Implementation Process That Ensures Success
           </H2>
@@ -110,4 +107,4 @@ export default function SolutionImplementationSection() {
       </div>
     </section>
   );
-}
+}

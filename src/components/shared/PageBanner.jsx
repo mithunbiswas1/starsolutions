@@ -71,11 +71,6 @@ export default function PageBanner({
 
       {/* Content */}
       <div className="relative z-10 text-center max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mt-4">
-        {/* Subtle Glass Badge */}
-        <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full glass-badge bg-white/[0.06] text-white text-xs mb-4 select-none border border-white/15">
-          <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
-          <span>Star Solutions • Star Solutions BD</span>
-        </div>
 
 
         <H1 className="text-white font-extrabold text-3xl sm:text-4xl lg:text-5xl tracking-tight leading-tight drop-shadow-[0_0_20px_rgba(46,208,110,0.25)]">

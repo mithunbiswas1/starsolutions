@@ -1,6 +1,6 @@
 // src/app/(home)/_components/IndustriesSection.jsx
 import Image from "next/image";
-import { H2, H3, H5, P } from "@/components/ui/Typography";
+import { H2, H3, H4, H5, P } from "@/components/ui/Typography";
 import { baseUriBackend } from "@/redux/url/url";
 import { industriesData as defaultIndustries } from "../_data/industriesData";
 
@@ -39,15 +39,15 @@ export default function IndustriesSection({ industries }) {
               {/* Content */}
               <div className="absolute inset-0 p-3.5 lg:p-5 flex flex-col justify-between text-white">
                 <div className="self-start">
-                  <span className="glass-badge bg-white/10 backdrop-blur-md px-3 py-1 rounded-full text-xs font-semibold text-white/90 border border-white/15">
+                  <span className="glass-badge bg-white/10 backdrop-blur-md px-3 py-1 rounded-md text-xs font-semibold text-white/90 border border-white/15">
                     Industry
                   </span>
                 </div>
 
                 <div className="mt-auto">
-                  <H3 className="font-bold text-white mb-2 leading-snug">
+                  <H4 className="font-bold text-white mb-2 leading-snug">
                     {industry.title}
-                  </H3>
+                  </H4>
 
                   <P className="hidden lg:block text-white/90 text-sm opacity-0 group-hover:opacity-100 transition duration-300 leading-relaxed">
                     {industry.description}

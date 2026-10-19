@@ -38,7 +38,7 @@ export default function ServicesSection({ services = defaultServices }) {
               <div className="absolute inset-0 p-3.5 sm:p-5 flex flex-col justify-between text-white">
                 {/* Category Glass Badge */}
                 <div className="self-start">
-                  <span className="glass-badge bg-white/10 backdrop-blur-md px-3 py-1 rounded-full text-xs font-semibold text-white/90 border border-white/15">
+                  <span className="glass-badge bg-white/10 backdrop-blur-md px-3 py-1 rounded-md text-xs font-semibold text-white/90 border border-white/15">
                     {service.category}
                   </span>
                 </div>

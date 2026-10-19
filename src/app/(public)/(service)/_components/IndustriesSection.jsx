@@ -35,9 +35,6 @@ export default function IndustriesSection({ industriesData }) {
         {/* Header */}
         <div className="grid lg:grid-cols-2 gap-8 mb-14 items-end">
           <div>
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/[0.04] text-primary text-xs font-semibold uppercase tracking-wider mb-3 border border-white/10">
-              Cross-Sector Expertise
-            </div>
             <H2 className="font-extrabold text-white text-3xl sm:text-4xl">
               {industriesData.heading}
             </H2>

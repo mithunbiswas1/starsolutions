@@ -76,8 +76,7 @@ export default async function ProjectsDetailPage({ params }) {
 
         <div className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10">
           <div className="mb-4">
-            <span className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/[0.06] text-primary text-xs font-semibold tracking-wider uppercase border border-white/15">
-              <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
+            <span className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-white/[0.06] text-primary text-xs font-semibold tracking-wider uppercase border border-white/15">
               {study.category}
             </span>
           </div>
@@ -140,7 +139,7 @@ export default async function ProjectsDetailPage({ params }) {
                   {study.technologies?.map((tech, index) => (
                     <span
                       key={index}
-                      className="bg-white/[0.05] text-gray-200 border border-white/10 px-3 py-1 rounded-full text-xs font-medium"
+                      className="bg-white/[0.05] text-gray-200 border border-white/10 px-3 py-1 rounded-md text-xs font-medium"
                     >
                       {tech}
                     </span>

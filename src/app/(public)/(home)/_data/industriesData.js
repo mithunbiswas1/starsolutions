@@ -3,7 +3,7 @@ export const industriesData = [
   {
     id: 1,
     title: "FinTech & Digital Banking",
-    description: "PCI-compliant payment gateways, core banking ledgers, digital wallets, and fraud prevention engines.",
+    description: "PCI-compliant payment gateways, core banking ledgers, and fraud prevention engines.",
     image: "/services/ui-ux-design/fintech.webp",
   },
   {

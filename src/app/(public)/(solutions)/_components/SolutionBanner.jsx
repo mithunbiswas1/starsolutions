@@ -34,11 +34,6 @@ export default function SolutionBanner({
       {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-28 lg:py-32">
         <div className="max-w-3xl">
-          {/* Subtle Glass Badge */}
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/[0.06] text-primary text-xs font-semibold uppercase tracking-wider mb-6 border border-white/15">
-            <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
-            <span>Enterprise Solutions Suite</span>
-          </div>
 
           <H1 className="text-white font-extrabold text-3xl sm:text-5xl lg:text-6xl tracking-tight leading-tight mb-6 drop-shadow-[0_0_20px_rgba(46,208,110,0.2)]">
             {title}

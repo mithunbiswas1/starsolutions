@@ -49,7 +49,7 @@ export const servicesData = [
       "Custom LLM integrations, intelligent document automation, predictive analytics, and workflow bots that multiply team output.",
   },
   {
-    title: "SEO & Generative Engine Optimization",
+    title: "SEO Optimization",
     category: "Search Growth",
     href: "/seo",
     image: "/home/services/seo-optimization.webp",

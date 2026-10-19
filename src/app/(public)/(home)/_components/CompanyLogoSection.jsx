@@ -39,7 +39,6 @@ export default function CompanyLogoSection({ companies }) {
               />
             ) : (
               <span className="inline-flex items-center gap-2 text-xs sm:text-sm font-semibold text-gray-300 tracking-wide">
-                <span className="w-1.5 h-1.5 rounded-full bg-primary" />
                 {company.title || company.name}
               </span>
             )}
