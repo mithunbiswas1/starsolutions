@@ -12,60 +12,41 @@ import { baseUriBackend } from "@/redux/url/url";
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL;
 
+import { siteConfig } from "@/config/siteConfig";
+
 export async function generateMetadata() {
-  const about = await getAbout();
+  const about = await getAbout().catch(() => null);
 
   const data = about?.data || {};
-  const title = data.title ? `${data.title} | Logicraft IT` : "About Us | Logicraft IT";
-  const description = data?.short_description || "About Logicraft IT";
-  const bannerImage = data?.banner_image ? `${baseUriBackend}${data.banner_image}` : "/logo_black.png";
+  const title = data.title ? `${data.title} | ${siteConfig.brandName}` : `About Us | ${siteConfig.brandName}`;
+  const description = data?.short_description || `About ${siteConfig.brandName} - Leading software development company in Bangladesh.`;
+  const bannerImage = data?.banner_image ? `${baseUriBackend}${data.banner_image}` : `${siteConfig.domain}/logo_white.png`;
 
   return {
     title,
     description,
-
     keywords: [
-      "About Us",
-      "Logicraft IT",
-      "Software Company",
-      "Web Development",
-      "Mobile App Development",
-      "Digital Solutions",
-      "Technology Partner",
-      "Mission and Vision",
+      "About Star Solutions",
+      "Star Solutions BD",
+      "Software Company in Bangladesh",
+      "Custom Software Development Dhaka",
+      "IT Consulting Firm BD",
+      ...siteConfig.keywords,
     ],
 
-    authors: [
-      {
-        name: "Logicraft IT",
-      },
-    ],
-
-    creator: "Logicraft IT",
-    publisher: "Logicraft IT",
-
-    robots: {
-      index: true,
-      follow: true,
-      nocache: false,
-      googleBot: {
-        index: true,
-        follow: true,
-        "max-video-preview": -1,
-        "max-image-preview": "large",
-        "max-snippet": -1,
-      },
-    },
+    authors: [{ name: siteConfig.brandName, url: siteConfig.domain }],
+    creator: siteConfig.brandName,
+    publisher: siteConfig.legalName,
 
     alternates: {
-      canonical: `${SITE_URL}/about`,
+      canonical: `${siteConfig.domain}/about`,
     },
 
     openGraph: {
       title,
       description,
-      url: `${SITE_URL}/about`,
-      siteName: "Logicraft IT",
+      url: `${siteConfig.domain}/about`,
+      siteName: siteConfig.brandName,
       locale: "en_US",
       type: "website",
       images: [
@@ -73,10 +54,11 @@ export async function generateMetadata() {
           url: bannerImage,
           width: 1200,
           height: 630,
-          alt: data?.title || "About Logicraft IT",
+          alt: data?.title || `About ${siteConfig.brandName}`,
         },
       ],
     },
+
 
     twitter: {
       card: "summary_large_image",

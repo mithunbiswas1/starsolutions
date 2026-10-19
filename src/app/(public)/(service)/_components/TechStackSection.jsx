@@ -206,28 +206,47 @@ const iconMap = {
 
 export default function TechStackSection({ techStackData }) {
   return (
-    <section className="py-15 bg-white">
-      <div className="max-w-7xl mx-auto px-4">
+    <section className="py-20 relative overflow-hidden bg-transparent border-b border-white/10">
+      {/* Background ambient lighting */}
+      <div className="absolute top-1/2 left-1/3 -translate-y-1/2 w-[600px] h-[300px] bg-primary/10 rounded-full blur-[140px] pointer-events-none" />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header */}
-        <div className="grid lg:grid-cols-2 gap-10 mb-16 lg:mb-20">
+        <div className="grid lg:grid-cols-2 gap-8 mb-14 items-end">
           <div>
-            <H2 className="font-bold">{techStackData.heading}</H2>
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/[0.04] text-primary text-xs font-semibold uppercase tracking-wider mb-3 border border-white/10">
+              Modern Tech Stack
+            </div>
+            <H2 className="font-extrabold text-white text-3xl sm:text-4xl">
+              {techStackData.heading}
+            </H2>
           </div>
 
           <div>
-            <P className="text-gray-600">{techStackData.description}</P>
+            <P className="text-gray-300 leading-relaxed text-base sm:text-lg">
+              {techStackData.description}
+            </P>
           </div>
         </div>
 
         {/* Tech Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-y-10 gap-x-6">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
           {techStackData.technologies.map((tech) => {
             const Icon = iconMap[tech.icon];
 
             return (
-              <div key={tech.name} className="flex items-center gap-4">
-                {Icon && <Icon className="text-2xl shrink-0" />}
-                <span className="font-medium text-gray-800">{tech.name}</span>
+              <div
+                key={tech.name}
+                className="p-4 rounded-xl glass-dark bg-white/[0.03] backdrop-blur-xl border border-white/10 hover:border-primary/40 flex items-center gap-3.5 transition-all duration-300 group hover:-translate-y-0.5"
+              >
+                {Icon && (
+                  <div className="p-2 rounded-lg bg-white/[0.04] text-primary group-hover:scale-110 transition-transform">
+                    <Icon className="text-xl shrink-0" />
+                  </div>
+                )}
+                <span className="font-medium text-white group-hover:text-primary transition-colors text-sm">
+                  {tech.name}
+                </span>
               </div>
             );
           })}
@@ -236,3 +255,4 @@ export default function TechStackSection({ techStackData }) {
     </section>
   );
 }
+

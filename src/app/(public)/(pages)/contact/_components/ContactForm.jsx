@@ -58,13 +58,16 @@ export default function ContactForm() {
   });
 
   return (
-    <form onSubmit={formik.handleSubmit} className="space-y-8">
+    <form
+      onSubmit={formik.handleSubmit}
+      className="glass-dark bg-white/[0.03] backdrop-blur-xl border border-white/10 rounded-3xl p-6 sm:p-10 shadow-2xl space-y-6"
+    >
       <Input
         id="name"
         name="name"
         label="Name*"
         placeholder="Enter your name"
-        className="h-16 rounded-2xl border-0 bg-gray-200 px-6 text-lg"
+        className="h-14 sm:h-16 rounded-2xl border border-white/10 bg-white/[0.04] px-6 text-white placeholder:text-gray-500 focus:border-primary/50 focus:bg-white/[0.08]"
         value={formik.values.name}
         onChange={formik.handleChange}
         onBlur={formik.handleBlur}
@@ -81,7 +84,7 @@ export default function ContactForm() {
           type="email"
           label="Email*"
           placeholder="Enter your email"
-          className="h-16 rounded-2xl border-0 bg-gray-200 px-6 text-lg"
+          className="h-14 sm:h-16 rounded-2xl border border-white/10 bg-white/[0.04] px-6 text-white placeholder:text-gray-500 focus:border-primary/50 focus:bg-white/[0.08]"
           value={formik.values.email}
           onChange={formik.handleChange}
           onBlur={formik.handleBlur}
@@ -99,7 +102,7 @@ export default function ContactForm() {
           type="tel"
           label="Phone*"
           placeholder="Enter your phone"
-          className="h-16 rounded-2xl border-0 bg-gray-200 px-6 text-lg"
+          className="h-14 sm:h-16 rounded-2xl border border-white/10 bg-white/[0.04] px-6 text-white placeholder:text-gray-500 focus:border-primary/50 focus:bg-white/[0.08]"
           value={formik.values.phone}
           onChange={formik.handleChange}
           onBlur={formik.handleBlur}
@@ -117,7 +120,7 @@ export default function ContactForm() {
         name="subject"
         label="Subject*"
         placeholder="Enter message subject"
-        className="h-16 rounded-2xl border-0 bg-gray-200 px-6 text-lg"
+        className="h-14 sm:h-16 rounded-2xl border border-white/10 bg-white/[0.04] px-6 text-white placeholder:text-gray-500 focus:border-primary/50 focus:bg-white/[0.08]"
         value={formik.values.subject}
         onChange={formik.handleChange}
         onBlur={formik.handleBlur}
@@ -130,18 +133,18 @@ export default function ContactForm() {
       />
 
       <div>
-        <label className="block mb-3 text-sm font-medium text-gray_deep">
+        <label className="block mb-2 text-sm font-medium text-gray-300">
           Message*
         </label>
 
         <textarea
           id="message"
           name="message"
-          rows={6}
-          placeholder="Tell us about your project..."
-          className={`w-full rounded-2xl border-0 bg-gray-200 px-6 py-5 text-base outline-none focus:ring-1 focus:ring-primary resize-none ${
+          rows={5}
+          placeholder="Tell us about your project requirements..."
+          className={`w-full rounded-2xl border border-white/10 bg-white/[0.04] px-6 py-4 text-white placeholder:text-gray-500 outline-none focus:border-primary/50 focus:bg-white/[0.08] transition-all resize-none ${
             formik.touched.message && formik.errors.message
-              ? "ring-2 ring-red-500"
+              ? "border-red-500"
               : ""
           }`}
           value={formik.values.message}
@@ -149,14 +152,14 @@ export default function ContactForm() {
           onBlur={formik.handleBlur}
         />
         {formik.touched.message && formik.errors.message && (
-          <p className="mt-1 text-sm text-red-600">{formik.errors.message}</p>
+          <p className="mt-1 text-sm text-red-400">{formik.errors.message}</p>
         )}
       </div>
 
       <button
         type="submit"
         disabled={isLoading}
-        className="h-20 w-full rounded-full bg-black text-lg font-semibold text-white transition hover:opacity-90 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+        className="h-16 w-full rounded-full bg-primary text-black text-lg font-bold transition-all duration-300 hover:shadow-[0_0_25px_rgba(46,208,110,0.4)] hover:scale-[1.01] disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 cursor-pointer"
       >
         {isLoading ? (
           <>

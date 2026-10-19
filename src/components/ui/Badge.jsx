@@ -23,6 +23,8 @@ const Badge = ({
     outline: "bg-transparent text-gray-700 border-gray-300",
     gradient:
       "bg-gradient-to-r from-primary to-secondary text-white border-transparent",
+    glass: "glass-badge bg-white/70 text-gray-800 border-white/50",
+    glass_primary: "glass-badge bg-primary/10 text-primary border-primary/25",
   };
 
   const sizes = {

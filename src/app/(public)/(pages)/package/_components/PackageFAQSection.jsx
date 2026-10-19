@@ -54,19 +54,19 @@ const faqs = [
 
 export default function PackageFAQSection() {
   return (
-    <section className="py-15 bg-gray-100">
-      <div className="max-w-7xl mx-auto px-4">
-        <div className="grid lg:grid-cols-2 gap-10">
+    <section className="py-16 sm:py-24 bg-transparent relative border-t border-white/10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid lg:grid-cols-2 gap-10 lg:gap-14">
           {/* Sticky Left Panel */}
-          <div className="lg:sticky lg:top-20 h-fit">
-            <H2 className="font-bold mb-8">Frequently Asked Questions</H2>
+          <div className="lg:sticky lg:top-24 h-fit">
+            <H2 className="font-bold mb-8 text-white">Frequently Asked Questions</H2>
 
-            <div className="bg-white p-4 lg:p-8 rounded-sm">
-              <H3 className="mb-5">
+            <div className="glass-dark bg-white/[0.03] backdrop-blur-xl border border-white/10 rounded-3xl p-6 lg:p-8 shadow-xl">
+              <H3 className="mb-4 text-white font-bold leading-snug">
                 Flexible packages built for every stage of growth
               </H3>
 
-              <P className="text-gray-600 mb-8">
+              <P className="text-gray-300 mb-8 text-base leading-relaxed">
                 Whether you're launching a startup, scaling a business, or
                 managing enterprise operations, our packages provide the
                 flexibility, support, and expertise needed to achieve your
@@ -75,7 +75,7 @@ export default function PackageFAQSection() {
 
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center px-7 py-4 bg-black text-white rounded-full font-medium hover:opacity-90 transition"
+                className="inline-flex items-center justify-center px-8 py-4 bg-primary text-black font-bold rounded-full hover:shadow-[0_0_25px_rgba(46,208,110,0.4)] transition-all duration-300 hover:scale-[1.02]"
               >
                 Talk to the Team
               </Link>
@@ -89,13 +89,13 @@ export default function PackageFAQSection() {
                 <AccordionItem
                   key={index}
                   value={`item-${index}`}
-                  className="bg-white border-0 px-4 lg:px-6"
+                  className="glass-dark bg-white/[0.03] hover:bg-white/[0.06] backdrop-blur-xl border border-white/10 rounded-2xl px-6 transition-all duration-200"
                 >
-                  <AccordionTrigger className="text-left text-lg font-semibold py-8 hover:no-underline">
+                  <AccordionTrigger className="text-left text-base sm:text-lg font-semibold py-6 text-white hover:text-primary transition-colors hover:no-underline">
                     {faq.question}
                   </AccordionTrigger>
 
-                  <AccordionContent className="text-gray-600 pb-8">
+                  <AccordionContent className="text-gray-300 pb-6 text-sm sm:text-base leading-relaxed">
                     {faq.answer}
                   </AccordionContent>
                 </AccordionItem>

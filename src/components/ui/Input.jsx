@@ -11,6 +11,7 @@ const Input = forwardRef(
       name,
       placeholder,
       type = "text",
+      variant = "default",
       className,
       prefix,
       suffix,
@@ -49,7 +50,10 @@ const Input = forwardRef(
           aria-invalid={!!error}
           suppressHydrationWarning={true}
           className={cn(
-            "w-full rounded-md border border-border_gray bg-white text-base focus:outline-none focus:ring-1 focus:ring-primary py-3 px-4",
+            "w-full rounded-md border text-base focus:outline-none focus:ring-1 focus:ring-primary py-3 px-4 transition",
+            variant === "glass"
+              ? "glass focus:bg-white border-white/60"
+              : "border-border_gray bg-white",
             prefix ? "pl-10" : "",
             suffix ? "pr-10" : "",
             error && "border-red-500 focus:ring-red-500",

@@ -108,7 +108,7 @@ export async function executeApiRoute(request, routeParams, routeConfig) {
       try {
         decodedToken = jwt.verify(
           token,
-          process.env.ACCESS_TOKEN_SECRET || "logicraft_it_super_secret_access_token_key_2026"
+          process.env.ACCESS_TOKEN_SECRET || "starsolutions_bd_super_secret_access_token_key_2026"
         );
       } catch (error) {
         throw new ApiError(401, "Invalid or expired access token");

@@ -56,19 +56,27 @@ const faqs = [
 
 export default function SolutionFAQSection() {
   return (
-    <section className="py-15 bg-gray-100">
-      <div className="max-w-7xl mx-auto px-4">
-        <div className="grid lg:grid-cols-2 gap-10">
+    <section className="py-20 relative overflow-hidden bg-transparent border-b border-white/10">
+      {/* Background ambient lighting */}
+      <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-[500px] h-[300px] bg-primary/10 rounded-full blur-[140px] pointer-events-none" />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="grid lg:grid-cols-2 gap-12 items-start">
           {/* Sticky Left Panel */}
           <div className="lg:sticky lg:top-24 h-fit">
-            <H2 className="font-bold mb-8">FAQ About ERP</H2>
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/[0.04] text-primary text-xs font-semibold uppercase tracking-wider mb-3 border border-white/10">
+              Frequently Asked
+            </div>
+            <H2 className="font-extrabold text-white mb-8 text-3xl sm:text-4xl">
+              FAQ About ERP
+            </H2>
 
-            <div className="bg-white p-8 lg:p-10 rounded-sm">
-              <H3 className="mb-5">
+            <div className="glass-dark bg-white/[0.03] backdrop-blur-xl border border-white/10 p-6 lg:p-8 rounded-2xl">
+              <H3 className="text-white font-bold mb-3 text-xl">
                 Everything you need to know before starting ERP
               </H3>
 
-              <P className="text-gray-600 mb-8">
+              <P className="text-gray-300 mb-8 leading-relaxed text-sm sm:text-base">
                 We help businesses design, build, and implement ERP systems that
                 unify operations, improve efficiency, and support long-term
                 growth.
@@ -76,7 +84,7 @@ export default function SolutionFAQSection() {
 
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center px-7 py-4 bg-black text-white rounded-full font-medium hover:opacity-90 transition"
+                className="inline-flex items-center justify-center px-7 py-3.5 bg-primary hover:bg-[#25b55e] text-black font-semibold rounded-xl transition-all shadow-[0_0_20px_rgba(46,208,110,0.3)] hover:scale-[1.02]"
               >
                 Talk to Experts
               </Link>
@@ -90,13 +98,13 @@ export default function SolutionFAQSection() {
                 <AccordionItem
                   key={index}
                   value={`item-${index}`}
-                  className="bg-white border-0 px-6 lg:px-8"
+                  className="glass-dark bg-white/[0.03] backdrop-blur-xl border border-white/10 hover:border-primary/40 rounded-2xl px-6 transition-all duration-300"
                 >
-                  <AccordionTrigger className="text-left text-lg font-semibold py-8 hover:no-underline">
+                  <AccordionTrigger className="text-left text-white hover:text-primary text-base sm:text-lg font-semibold py-6 hover:no-underline">
                     {faq.question}
                   </AccordionTrigger>
 
-                  <AccordionContent className="text-gray-600 pb-8">
+                  <AccordionContent className="text-gray-300 pb-6 text-sm sm:text-base leading-relaxed">
                     {faq.answer}
                   </AccordionContent>
                 </AccordionItem>
@@ -108,3 +116,4 @@ export default function SolutionFAQSection() {
     </section>
   );
 }
+

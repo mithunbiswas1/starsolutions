@@ -97,8 +97,10 @@ export default function Navbar({ settings }) {
 
   return (
     <div
-      className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 border-b border-white/20 ${
-        isScrolled ? "bg-white shadow-md" : "bg-transparent"
+      className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
+        isScrolled
+          ? "bg-white/85 backdrop-blur-xl border-b border-gray-200/60 shadow-xs"
+          : "bg-transparent border-b border-white/20 backdrop-blur-xs"
       }`}
     >
       <nav className="max-w-screen-xl mx-auto flex items-center justify-between px-4 py-1">

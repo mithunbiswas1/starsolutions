@@ -1,76 +1,93 @@
 // src/app/(home)/_components/AtAGlanceSection.jsx
-
 import Image from "next/image";
 import { H2, H3, P } from "@/components/ui/Typography";
 import { baseUriBackend } from "@/redux/url/url";
+import { allianceData as defaultAlliance } from "../_data/allianceData";
 
 function StatCard({ value, label }) {
   return (
-    <div className="bg-gray-200 text-black rounded-xl p-4 lg:p-8 flex flex-col justify-center">
-      <H3 className="font-bold leading-none mb-3">{value}</H3>
-      <P>{label}</P>
+    <div className="glass-dark bg-white/[0.03] hover:bg-white/[0.06] backdrop-blur-xl text-white rounded-2xl p-6 lg:p-8 flex flex-col justify-center border border-white/10 hover:border-primary/40 transition-all duration-300 shadow-xl group">
+      <H3 className="font-bold leading-none mb-3 text-white">
+        <span className="text-primary group-hover:drop-shadow-[0_0_12px_rgba(46,208,110,0.4)] transition-all">{value}</span>
+      </H3>
+      <P className="text-gray-300 text-sm sm:text-base leading-snug">{label}</P>
     </div>
   );
 }
 
 export default function AtAGlanceSection({ alliances }) {
-  const allianceData = alliances?.data;
-
-  if (!allianceData) return null;
+  const dynamicAlliance = alliances?.data;
+  const alliance = dynamicAlliance || defaultAlliance;
 
   // Get certification images
-  const certificationImages = [
-    allianceData.alliance_image1,
-    allianceData.alliance_image2,
-    allianceData.alliance_image3,
-    allianceData.alliance_image4,
-  ].filter(Boolean);
+  const certificationImages = dynamicAlliance
+    ? [
+        dynamicAlliance.alliance_image1,
+        dynamicAlliance.alliance_image2,
+        dynamicAlliance.alliance_image3,
+        dynamicAlliance.alliance_image4,
+      ].filter(Boolean)
+    : defaultAlliance.certificationImages;
 
   // Stats array
   const stats = [
     {
-      value: `${allianceData.experience_year || 0} years`,
+      value: `${alliance.experience_year || 12} years`,
       label: "in the global IT market",
     },
     {
-      value: `${allianceData.client || 0}+ clients served`,
+      value: `${alliance.client || 95}+ clients served`,
       label: "including 5 from Fortune 500",
     },
     {
-      value: `${allianceData.projects || 0} projects`,
+      value: `${alliance.projects || 280} projects`,
       label: "successfully served",
     },
     {
-      value: `${allianceData.countries || 0} countries`,
+      value: `${alliance.countries || 35} countries`,
       label: "on our global delivery map",
     },
   ];
 
   return (
-    <section className="py-15 bg-[#2A2D33] text-white">
-      <div className="max-w-7xl mx-auto px-4">
-        <H2 className="text-white font-bold mb-10 lg:mb-16">
-          Soft Industry Alliance at a glance
+    <section className="py-16 sm:py-24 bg-transparent text-white relative overflow-hidden">
+      {/* Subtle ambient glass glow */}
+      <div className="absolute top-1/2 left-1/3 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-primary/[0.06] rounded-full blur-[140px] pointer-events-none" />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/[0.04] text-primary text-xs font-semibold uppercase tracking-wider mb-4 border border-white/10">
+          Proven Global Track Record
+        </div>
+        <H2 className="text-white font-extrabold text-3xl sm:text-4xl mb-10 lg:mb-14">
+          Star Solutions BD Delivery At A Glance
         </H2>
 
-        <div className="grid lg:grid-cols-[3fr_7fr] gap-10 lg:gap-16 items-center">
-          {/* Logos */}
-          <div className="grid grid-cols-2 gap-6 lg:gap-10">
+
+        <div className="grid lg:grid-cols-[3fr_7fr] gap-8 lg:gap-14 items-center">
+          {/* Logos with Frosted Glass Badges */}
+          <div className="grid grid-cols-2 gap-4 lg:gap-6">
             {certificationImages.map((image, index) => (
-              <div key={index} className="flex items-center justify-center">
+              <div
+                key={index}
+                className="glass-badge bg-white/[0.03] backdrop-blur-md rounded-2xl p-4 lg:p-6 flex items-center justify-center border border-white/10 hover:border-white/25 transition-all select-none hover:bg-white/[0.06]"
+              >
                 <Image
-                  src={`${baseUriBackend}${image}`}
+                  src={
+                    image?.startsWith("/")
+                      ? image
+                      : `${baseUriBackend}${image}`
+                  }
                   alt={`Certification ${index + 1}`}
-                  width={240}
-                  height={120}
-                  className="w-full h-auto object-contain"
-                  unoptimized
+                  width={200}
+                  height={100}
+                  className="w-full h-auto max-h-16 object-contain opacity-85 hover:opacity-100 transition brightness-110"
+                  unoptimized={image?.endsWith(".svg")}
                 />
               </div>
             ))}
           </div>
 
-          {/* Stats */}
+          {/* Stats with Frosted Glass Cards */}
           <div className="space-y-4 lg:space-y-6">
             {/* Row 1 */}
             <div className="grid gap-4 lg:gap-6 md:grid-cols-[3fr_5fr]">

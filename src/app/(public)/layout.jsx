@@ -9,7 +9,7 @@ export default async function PublicLayout({ children }) {
   return (
     <>
       <Navbar settings={settingsData} />
-      <main className="min-h-screen">{children}</main>
+      <main className="min-h-screen bg-[#080c14] text-white">{children}</main>
       <Footer settings={settingsData} />
       <WhatsAppChatButton settings={settingsData} />
     </>

@@ -16,7 +16,7 @@ export default function WhatsAppChatButton({ settings }) {
     <div className="fixed bottom-5 right-5 flex flex-col items-end z-50">
       {/* Chatbox */}
       {isOpen && (
-        <div className="bg-white shadow-lg rounded-lg w-64 p-4 mb-2 border border-gray-200">
+        <div className="glass bg-white/90 backdrop-blur-xl shadow-xl rounded-2xl w-68 p-4 mb-3 border border-white/60 animate-fade-in">
           {/* Header with WhatsApp Call Button */}
           <div className="flex justify-between items-center border-b pb-2 mb-2">
             <a

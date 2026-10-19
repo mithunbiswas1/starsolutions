@@ -77,34 +77,43 @@ export default function Footer({ settings }) {
     }));
 
   return (
-    <footer className="bg-[#2A2D33] text-white">
-      <div className="max-w-7xl mx-auto px-4 py-10">
+    <footer className="relative bg-[#070b12] text-white border-t border-white/10 pt-16 pb-12 overflow-hidden">
+      {/* Background ambient lighting */}
+      <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary/[0.04] rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-secondary/[0.04] rounded-full blur-[140px] pointer-events-none" />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Top */}
         <div className="grid lg:grid-cols-[2fr_1fr_1.5fr_1fr] gap-12">
           {/* Logo */}
-          <Link href="/">
-            <Image
-              src={
-                settings?.data?.logoWhite
-                  ? `${baseUriBackend}${settings.data.logoWhite}`
-                  : "/logo_white.png"
-              }
-              alt={settings?.websiteName || "Logicraft IT"}
-              width={320}
-              height={100}
-              className="h-auto w-full max-w-50"
-            />
-          </Link>
+          <div className="space-y-4">
+            <Link href="/">
+              <Image
+                src={
+                  settings?.data?.logoWhite
+                    ? `${baseUriBackend}${settings.data.logoWhite}`
+                    : "/logo_white.png"
+                }
+                alt={settings?.websiteName || "Star Solutions BD"}
+                width={320}
+                height={100}
+                className="h-auto w-full max-w-50 brightness-110"
+              />
+            </Link>
+            <p className="text-sm text-gray-400 max-w-sm leading-relaxed">
+              Star Solutions (Star Solutions BD) — Architecting mission-critical custom enterprise software, cloud ERP, and intelligent web platforms in Bangladesh.
+            </p>
+          </div>
 
           {/* Navigation */}
           <div>
-            <h4 className="font-bold mb-5 text-white">Useful Link</h4>
-            <ul className="space-y-5 text-gray-300">
+            <h4 className="font-bold mb-5 text-white tracking-wide">Useful Links</h4>
+            <ul className="space-y-3.5 text-gray-300">
               {navigationLinks.map((item) => (
                 <li key={item.label}>
                   <Link
                     href={item.href}
-                    className="text-lg hover:text-gray-300 transition-colors"
+                    className="text-base text-gray-400 hover:text-primary transition-colors duration-200"
                   >
                     {item.label}
                   </Link>
@@ -115,30 +124,32 @@ export default function Footer({ settings }) {
 
           {/* Contact */}
           <div>
-            <h4 className="font-bold mb-5 text-white">Address</h4>
+            <h4 className="font-bold mb-5 text-white tracking-wide">Address</h4>
 
-            <div className="space-y-5 text-gray-300">
-              {data.address && <p>{data.address}</p>}
+            <div className="space-y-4 text-gray-300">
+              <p className="text-gray-400 text-sm leading-relaxed">
+                {data.address || "Dhaka, Bangladesh"}
+              </p>
 
-              {data.phone && <p className="font-semibold">{data.phone}</p>}
+              <p className="font-semibold text-white text-sm">
+                {data.phone || "+880 1700-000000"}
+              </p>
 
-              {data.email && (
-                <a
-                  href={`mailto:${data.email}`}
-                  className="text-lg hover:text-gray-300 transition-colors"
-                >
-                  {data.email}
-                </a>
-              )}
+              <a
+                href={`mailto:${data.email || "info@starsolutionsbd.com"}`}
+                className="block text-sm text-gray-400 hover:text-primary transition-colors"
+              >
+                {data.email || "info@starsolutionsbd.com"}
+              </a>
             </div>
           </div>
 
-          {/*  Social */}
+          {/* Social */}
           <div className="lg:min-w-70">
-            <h4 className="font-bold mb-5 text-white">Social</h4>
+            <h4 className="font-bold mb-5 text-white tracking-wide">Connect</h4>
 
             {socialLinks.length > 0 && (
-              <div className="flex flex-wrap gap-4 mt-4">
+              <div className="flex flex-wrap gap-2.5 mt-4">
                 {socialLinks.map((item) => {
                   const Icon = item.icon;
 
@@ -147,11 +158,11 @@ export default function Footer({ settings }) {
                       key={item.label}
                       href={item.href}
                       aria-label={item.label}
-                      className="w-14 h-14 rounded-full bg-white text-[#2A2D33] flex items-center justify-center hover:scale-105 transition-transform"
+                      className="w-10 h-10 rounded-xl glass-badge bg-white/[0.04] border border-white/10 hover:border-primary/50 hover:bg-white/[0.08] flex items-center justify-center text-gray-300 hover:text-primary hover:scale-105 transition-all duration-300"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      <Icon size={24} />
+                      <Icon size={18} />
                     </Link>
                   );
                 })}
@@ -160,25 +171,18 @@ export default function Footer({ settings }) {
           </div>
         </div>
 
-        {/* Bottom */}
-        {/* <div className="mt-8 py-4 flex flex-col lg:flex-row justify-between gap-6 border-t border-white/10">
-          <p className="text-white/80">
-            Copyright © {new Date().getFullYear()}{" "}
-            {data.websiteName || "Logicraft IT"}
-          </p>
+        {/* Bottom Legal bar */}
+        <div className="mt-12 pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-gray-400">
+          <p>© {new Date().getFullYear()} {data.websiteName || "Star Solutions BD"}. All rights reserved.</p>
 
-          <div className="flex flex-wrap gap-8 lg:gap-12">
+          <div className="flex flex-wrap gap-6">
             {legalLinks.map((item) => (
-              <Link
-                key={item.label}
-                href={item.href}
-                className="text-white/80 hover:text-white transition-colors"
-              >
+              <Link key={item.label} href={item.href} className="hover:text-primary transition-colors">
                 {item.label}
               </Link>
             ))}
           </div>
-        </div> */}
+        </div>
       </div>
     </footer>
   );

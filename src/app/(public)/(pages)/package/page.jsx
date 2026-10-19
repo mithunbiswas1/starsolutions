@@ -6,23 +6,23 @@ import PackageFAQSection from "./_components/PackageFAQSection";
 import { getPackages } from "@/lib/getPackages";
 
 export const metadata = {
-  title: "Pricing & Packages | Choose Your Plan",
+  title: "Pricing & Packages | Star Solutions BD",
   description:
-    "Explore our flexible pricing plans designed for startups, businesses, and enterprises. Find the perfect package for your needs.",
+    "Explore our flexible pricing plans designed for startups, businesses, and enterprises in Bangladesh & worldwide by Star Solutions BD.",
   keywords:
-    "pricing, packages, plans, web development, software development, enterprise solutions",
+    "star solutions pricing, star solutions bd packages, software development cost bangladesh, erp pricing bd, web development package dhaka",
   openGraph: {
-    title: "Pricing & Packages | Choose Your Plan",
+    title: "Pricing & Packages | Star Solutions BD",
     description:
-      "Explore our flexible pricing plans designed for startups, businesses, and enterprises.",
-    url: "https://logicraftit.com",
-    siteName: "LogiCraft IT",
+      "Explore flexible pricing plans for custom software, ERP, mobile apps, and enterprise solutions by Star Solutions BD.",
+    url: "https://starsolutionsbd.com/package",
+    siteName: "Star Solutions BD",
     images: [
       {
-        url: "/packages/og-image.jpg",
+        url: "/home/banner/banner.webp",
         width: 1200,
         height: 630,
-        alt: "Pricing Packages",
+        alt: "Star Solutions BD Pricing Packages",
       },
     ],
     locale: "en_US",
@@ -30,10 +30,10 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Pricing & Packages | Choose Your Plan",
+    title: "Pricing & Packages | Star Solutions BD",
     description:
-      "Explore our flexible pricing plans designed for startups, businesses, and enterprises.",
-    images: ["/packages/twitter-image.jpg"],
+      "Explore flexible pricing plans for custom software, ERP, mobile apps, and enterprise solutions by Star Solutions BD.",
+    images: ["/home/banner/banner.webp"],
   },
 };
 

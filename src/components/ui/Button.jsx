@@ -41,6 +41,10 @@ const buttonVariants = cva(
           "bg-transparent text-gray_500 border border-gray_500 cursor-not-allowed",
         outline_icon:
           "backdrop-blur-xs text-info border border-info! hover:bg-foreground_primary hover:text-white",
+        glass:
+          "glass hover:bg-white text-heading border border-white/60 shadow-xs hover:shadow-sm",
+        glass_primary:
+          "bg-primary/15 backdrop-blur-md text-primary border border-primary/30 hover:bg-primary/25 hover:border-primary shadow-xs",
       },
       size: {
         default: "px-4 xl:px-5 py-2 xl:py-2.5 text-sm",
@@ -100,3 +104,4 @@ function Button({
 }
 
 export { Button, buttonVariants };
+export default Button;

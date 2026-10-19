@@ -6,10 +6,10 @@ import { H2, H3, P } from "@/components/ui/Typography";
 
 function ProjectCard({ item, reverse }) {
   return (
-    <div className="group grid lg:grid-cols-2 overflow-hidden bg-white">
+    <div className="group grid lg:grid-cols-2 overflow-hidden rounded-2xl glass-dark bg-white/[0.03] backdrop-blur-xl border border-white/10 hover:border-primary/40 transition-all duration-500">
       {/* Image */}
       <div
-        className={`relative h-60 sm:h-72 md:h-80 lg:h-auto lg:min-h-[500px] ${
+        className={`relative h-64 sm:h-80 lg:h-auto lg:min-h-[440px] overflow-hidden ${
           reverse ? "lg:order-1" : "lg:order-2"
         }`}
       >
@@ -17,28 +17,39 @@ function ProjectCard({ item, reverse }) {
           src={item.image}
           alt={item.title}
           fill
-          className="object-cover transition-transform duration-500"
+          className="object-cover transition-transform duration-700 group-hover:scale-105"
         />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#080c14]/80 via-transparent to-transparent pointer-events-none" />
       </div>
 
       {/* Content */}
       <div
-        className={`bg-gray-100 p-6 sm:p-8 lg:p-16 flex flex-col justify-center ${
+        className={`p-6 sm:p-10 lg:p-12 flex flex-col justify-center ${
           reverse ? "lg:order-2" : "lg:order-1"
         }`}
       >
-        <H3 className="font-bold mb-4 lg:mb-5 max-w-lg">{item.title}</H3>
+        <div className="inline-flex items-center gap-2 mb-3">
+          <span className="w-1.5 h-1.5 rounded-full bg-primary" />
+          <span className="text-xs font-semibold uppercase tracking-wider text-primary">
+            Featured Case
+          </span>
+        </div>
 
-        <P className="text-gray-600 mb-6 lg:mb-8 max-w-xl lg:leading-7">
+        <H3 className="font-bold text-white mb-4 text-2xl lg:text-3xl max-w-lg leading-tight group-hover:text-primary transition-colors">
+          {item.title}
+        </H3>
+
+        <P className="text-gray-300 mb-8 max-w-xl leading-relaxed text-sm sm:text-base">
           {item.description}
         </P>
 
         <div>
           <Link
             href={item.link}
-            className="inline-flex items-center gap-2 font-medium transition-all duration-300 hover:gap-3"
+            className="inline-flex items-center gap-2 font-semibold text-primary hover:text-white transition-colors duration-300 group/btn"
           >
-            View Case Study →
+            <span>View Case Study</span>
+            <span className="transition-transform duration-300 group-hover/btn:translate-x-1.5">→</span>
           </Link>
         </div>
       </div>
@@ -48,17 +59,27 @@ function ProjectCard({ item, reverse }) {
 
 export default function ProjectsSection({ projectsData }) {
   return (
-    <section className="py-12 lg:py-15 bg-white">
-      <div className="max-w-7xl mx-auto px-4">
-        {/* Section Header */}
-        <div className="max-w-3xl mb-10 lg:mb-20">
-          <H2 className="font-bold mb-4 lg:mb-6">{projectsData.heading}</H2>
+    <section className="py-20 relative overflow-hidden bg-transparent border-b border-white/10">
+      {/* Background ambient lighting */}
+      <div className="absolute top-1/2 right-1/4 -translate-y-1/2 w-[600px] h-[350px] bg-secondary/10 rounded-full blur-[140px] pointer-events-none" />
 
-          <P className="text-gray-600">{projectsData.description}</P>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        {/* Section Header */}
+        <div className="max-w-3xl mb-14">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/[0.04] text-primary text-xs font-semibold uppercase tracking-wider mb-3 border border-white/10">
+            Proven Track Record
+          </div>
+          <H2 className="font-extrabold text-white mb-4 text-3xl sm:text-4xl">
+            {projectsData.heading}
+          </H2>
+
+          <P className="text-gray-300 leading-relaxed text-base sm:text-lg">
+            {projectsData.description}
+          </P>
         </div>
 
         {/* Projects */}
-        <div className="space-y-px bg-gray-200 overflow-hidden">
+        <div className="space-y-6">
           {projectsData.projects.map((item, index) => (
             <ProjectCard key={index} item={item} reverse={index % 2 !== 0} />
           ))}
@@ -67,3 +88,4 @@ export default function ProjectsSection({ projectsData }) {
     </section>
   );
 }
+
