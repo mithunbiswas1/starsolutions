@@ -15,10 +15,10 @@ const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL;
 export async function generateMetadata() {
   const about = await getAbout();
 
-  const data = about?.data;
-  const title = `${data.title} | Logicraft IT`;
-  const description = data?.short_description;
-  const bannerImage = `${baseUriBackend}${data.banner_image}`;
+  const data = about?.data || {};
+  const title = data.title ? `${data.title} | Logicraft IT` : "About Us | Logicraft IT";
+  const description = data?.short_description || "About Logicraft IT";
+  const bannerImage = data?.banner_image ? `${baseUriBackend}${data.banner_image}` : "/logo_black.png";
 
   return {
     title,

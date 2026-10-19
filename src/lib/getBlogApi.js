@@ -12,59 +12,67 @@ export async function getListBlogs({
   sortBy = "createdAt",
   sortOrder = "desc",
 } = {}) {
-  const validPage = Math.max(1, parseInt(page) || 1);
-  const validLimit = Math.max(1, parseInt(limit) || 10);
+  try {
+    const validPage = Math.max(1, parseInt(page) || 1);
+    const validLimit = Math.max(1, parseInt(limit) || 10);
 
-  const params = new URLSearchParams();
-  params.append("page", validPage.toString());
-  params.append("limit", validLimit.toString());
+    const params = new URLSearchParams();
+    params.append("page", validPage.toString());
+    params.append("limit", validLimit.toString());
 
-  if (category) params.append("category", category);
-  if (status) params.append("status", status);
-  if (search) params.append("search", search);
-  if (sortBy) params.append("sortBy", sortBy);
-  if (sortOrder) params.append("sortOrder", sortOrder);
+    if (category) params.append("category", category);
+    if (status) params.append("status", status);
+    if (search) params.append("search", search);
+    if (sortBy) params.append("sortBy", sortBy);
+    if (sortOrder) params.append("sortOrder", sortOrder);
 
-  const res = await fetch(
-    `${API_BASE_URL}get-list-blogs?${params.toString()}`,
-    {
-      cache: "no-store",
-    },
-  );
+    const res = await fetch(
+      `${API_BASE_URL}get-list-blogs?${params.toString()}`,
+      { cache: "no-store" }
+    );
 
-  if (!res.ok) {
-    throw new Error("Failed to fetch blogs list");
+    if (!res.ok) {
+      return { data: { blogs: [] } };
+    }
+
+    return await res.json();
+  } catch (error) {
+    return { data: { blogs: [] } };
   }
-
-  return res.json();
 }
 
 // 2. Get Popular Blogs
 export async function getPopularBlogs() {
-  const res = await fetch(`${API_BASE_URL}get-popular-blogs`, {
-    cache: "no-store",
-  });
+  try {
+    const res = await fetch(`${API_BASE_URL}get-popular-blogs`, {
+      cache: "no-store",
+    });
 
-  if (!res.ok) {
-    throw new Error("Failed to fetch popular blogs");
+    if (!res.ok) {
+      return { data: [] };
+    }
+
+    return await res.json();
+  } catch (error) {
+    return { data: [] };
   }
-
-  return res.json();
 }
 
 // 3. Get Blog By Slug
 export async function getBlogBySlug(slug) {
-  if (!slug) {
-    throw new Error("Slug is required");
+  try {
+    if (!slug) return { data: null };
+
+    const res = await fetch(`${API_BASE_URL}get-blog-by-slug/${slug}`, {
+      cache: "no-store",
+    });
+
+    if (!res.ok) {
+      return { data: null };
+    }
+
+    return await res.json();
+  } catch (error) {
+    return { data: null };
   }
-
-  const res = await fetch(`${API_BASE_URL}get-blog-by-slug/${slug}`, {
-    cache: "no-store",
-  });
-
-  if (!res.ok) {
-    throw new Error("Failed to fetch blog");
-  }
-
-  return res.json();
 }

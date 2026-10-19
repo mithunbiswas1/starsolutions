@@ -8,39 +8,46 @@ export async function getBlogs({
   page = 1,
   q = "",
 } = {}) {
-  // Ensure page is at least 1
-  const validPage = Math.max(1, parseInt(page) || 1);
+  try {
+    const validPage = Math.max(1, parseInt(page) || 1);
 
-  // Build query parameters
-  const params = new URLSearchParams();
-  params.append("limit", limit.toString());
-  params.append("order", order);
-  params.append("page", validPage.toString());
+    const params = new URLSearchParams();
+    params.append("limit", limit.toString());
+    params.append("order", order);
+    params.append("page", validPage.toString());
 
-  if (q) {
-    params.append("q", q);
+    if (q) {
+      params.append("q", q);
+    }
+
+    const res = await fetch(`${API_BASE_URL}blog?${params.toString()}`, {
+      cache: "no-store",
+    });
+
+    if (!res.ok) {
+      return { data: { blogs: [] } };
+    }
+
+    return await res.json();
+  } catch (error) {
+    return { data: { blogs: [] } };
   }
-
-  const res = await fetch(`${API_BASE_URL}blog?${params.toString()}`, {
-    cache: "no-store", // Revalidate every hour
-  });
-
-  if (!res.ok) {
-    throw new Error("Failed to fetch blogs");
-  }
-
-  return res.json();
 }
 
-// Function to get a single blog by slug
 export async function getBlogBySlug(slug) {
-  const res = await fetch(`${API_BASE_URL}blog/${slug}`, {
-    cache: "no-store",
-  });
+  try {
+    if (!slug) return { data: null };
 
-  if (!res.ok) {
-    throw new Error("Failed to fetch blog");
+    const res = await fetch(`${API_BASE_URL}blog/${slug}`, {
+      cache: "no-store",
+    });
+
+    if (!res.ok) {
+      return { data: null };
+    }
+
+    return await res.json();
+  } catch (error) {
+    return { data: null };
   }
-
-  return res.json();
 }
