@@ -95,9 +95,9 @@ export default function Footer({ settings }) {
                     : "/logo_white.png"
                 }
                 alt={settings?.websiteName || "Star Solutions BD"}
-                width={320}
-                height={100}
-                className="h-auto w-full max-w-50 brightness-110"
+                width={280}
+                height={62}
+                className="h-10 w-auto object-contain brightness-110"
               />
             </Link>
             <p className="text-sm text-gray-400 max-w-sm leading-relaxed">

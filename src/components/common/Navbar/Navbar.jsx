@@ -107,7 +107,7 @@ export default function Navbar({ settings }) {
         {/* Logo */}
         <div className="flex ">
           <Link href="/" className="flex items-center gap-2">
-            <span className="sr-only">Your Company</span>
+            <span className="sr-only">Star Solutions BD</span>
             <Image
               src={
                 isScrolled
@@ -118,10 +118,10 @@ export default function Navbar({ settings }) {
                     ? `${baseUriBackend}${settings.data.logoWhite}`
                     : "/logo_white.png"
               }
-              alt={settings?.websiteName || "Your Company Logo"}
-              width={200}
-              height={40}
-              className="h-8 w-auto"
+              alt={settings?.websiteName || "Star Solutions BD"}
+              width={240}
+              height={52}
+              className="h-8 md:h-9 w-auto object-contain"
               priority
             />
           </Link>
@@ -236,7 +236,7 @@ export default function Navbar({ settings }) {
               isScrolled ? "bg-gray-100" : "bg-black/50"
             } backdrop-blur-xl sticky top-0 z-30 border-b border-gray-300`}
           >
-            <Link href="#" className="-m-1.5 p-1.5">
+            <Link href="/" className="-m-1.5 p-1.5" onClick={() => setMobileMenuOpen(false)}>
               <Image
                 src={
                   isScrolled
@@ -247,10 +247,10 @@ export default function Navbar({ settings }) {
                       ? `${baseUriBackend}${settings.data.logoWhite}`
                       : "/logo_white.png"
                 }
-                alt={settings?.websiteName || "Your Company Logo"}
-                width={200}
-                height={40}
-                className="h-8 w-auto"
+                alt={settings?.websiteName || "Star Solutions BD"}
+                width={240}
+                height={52}
+                className="h-8 w-auto object-contain"
                 priority
               />
             </Link>
