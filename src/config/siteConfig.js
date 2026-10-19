@@ -13,7 +13,7 @@ export const siteConfig = {
   url: "https://starsolutionsbd.com",
   canonicalUrl: "https://starsolutionsbd.com",
   logo: "https://starsolutionsbd.com/star_logo_white.png",
-  favicon: "/favicon.ico?v=2",
+  favicon: "/favicon.ico",
 
   tagline: "Leading Custom Software & IT Solutions Company in Bangladesh",
   shortDescription:

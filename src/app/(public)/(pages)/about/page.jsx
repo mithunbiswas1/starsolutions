@@ -20,7 +20,7 @@ export async function generateMetadata() {
   const data = about?.data || {};
   const title = data.title ? `${data.title} | ${siteConfig.brandName}` : `About Us | ${siteConfig.brandName}`;
   const description = data?.short_description || `About ${siteConfig.brandName} - Leading software development company in Bangladesh.`;
-  const bannerImage = data?.banner_image ? `${baseUriBackend}${data.banner_image}` : `${siteConfig.domain}/logo_white.png`;
+  const bannerImage = data?.banner_image ? `${baseUriBackend}${data.banner_image}` : `${siteConfig.domain}/star_logo_white.png`;
 
   return {
     title,

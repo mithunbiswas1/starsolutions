@@ -25,7 +25,7 @@ export async function generateMetadata() {
       siteName: siteConfig.brandName,
       images: [
         {
-          url: `${siteConfig.domain}/logo_white.png`,
+          url: `${siteConfig.domain}/star_logo_white.png`,
           width: 1200,
           height: 630,
           alt: "Star Solutions BD - Software Development Company Bangladesh",

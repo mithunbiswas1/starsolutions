@@ -129,7 +129,7 @@ export default function Sidebar() {
       <div className="flex h-16 shrink-0 items-center border-b border-gray-200 px-6">
         <Link href="/admin/dashboard">
           <Image
-            src="/star_logo_black.png?v=2"
+            src="/star_logo_black.png"
             alt="Star Solutions BD"
             width={240}
             height={52}

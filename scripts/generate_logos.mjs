@@ -218,30 +218,28 @@ async function run() {
   // 1. Generate White Logo
   const logoWhiteSvg = buildLogoWhiteSvg();
   fs.writeFileSync(path.join(outDir, 'logo_white.svg'), logoWhiteSvg);
-  await sharp(Buffer.from(logoWhiteSvg), { density: 300 })
+  fs.writeFileSync(path.join(outDir, 'star_logo_white.svg'), logoWhiteSvg);
+  const whitePng = await sharp(Buffer.from(logoWhiteSvg), { density: 300 })
     .resize(680, 150)
     .png()
-    .toFile(path.join(outDir, 'logo_white.png'));
-  console.log('✓ Created logo_white.png & logo_white.svg');
-
-  await sharp(Buffer.from(logoWhiteSvg), { density: 300 })
-    .resize(680, 150)
-    .png()
-    .toFile(path.join(outDir, 'logo_white3.png'));
+    .toBuffer();
+  fs.writeFileSync(path.join(outDir, 'logo_white.png'), whitePng);
+  fs.writeFileSync(path.join(outDir, 'logo_white3.png'), whitePng);
+  fs.writeFileSync(path.join(outDir, 'star_logo_white.png'), whitePng);
+  console.log('✓ Created logo_white.png, star_logo_white.png & SVGs');
 
   // 2. Generate Black Logo
   const logoBlackSvg = buildLogoBlackSvg();
   fs.writeFileSync(path.join(outDir, 'logo_black.svg'), logoBlackSvg);
-  await sharp(Buffer.from(logoBlackSvg), { density: 300 })
+  fs.writeFileSync(path.join(outDir, 'star_logo_black.svg'), logoBlackSvg);
+  const blackPng = await sharp(Buffer.from(logoBlackSvg), { density: 300 })
     .resize(680, 150)
     .png()
-    .toFile(path.join(outDir, 'logo_black.png'));
-  console.log('✓ Created logo_black.png & logo_black.svg');
-
-  await sharp(Buffer.from(logoBlackSvg), { density: 300 })
-    .resize(680, 150)
-    .png()
-    .toFile(path.join(outDir, 'logo_black3.png'));
+    .toBuffer();
+  fs.writeFileSync(path.join(outDir, 'logo_black.png'), blackPng);
+  fs.writeFileSync(path.join(outDir, 'logo_black3.png'), blackPng);
+  fs.writeFileSync(path.join(outDir, 'star_logo_black.png'), blackPng);
+  console.log('✓ Created logo_black.png, star_logo_black.png & SVGs');
 
   // 3. Generate Favicon Assets
   const favSvg = buildFaviconSvg(512);

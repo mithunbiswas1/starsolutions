@@ -92,7 +92,7 @@ export default function Footer({ settings }) {
                 src={
                   settings?.data?.logoWhite
                     ? `${baseUriBackend}${settings.data.logoWhite}`
-                    : "/star_logo_white.png?v=2"
+                    : "/star_logo_white.png"
                 }
                 alt={settings?.websiteName || "Star Solutions BD"}
                 width={280}
