@@ -129,11 +129,11 @@ export default function Sidebar() {
       <div className="flex h-16 shrink-0 items-center border-b border-gray-200 px-6">
         <Link href="/admin/dashboard">
           <Image
-            src="/logo_black.png"
-            alt="Logo"
-            width={170}
-            height={40}
-            className="h-9 w-auto"
+            src="/star_logo_black.png?v=2"
+            alt="Star Solutions BD"
+            width={240}
+            height={52}
+            className="h-9 w-auto object-contain"
             priority
           />
         </Link>

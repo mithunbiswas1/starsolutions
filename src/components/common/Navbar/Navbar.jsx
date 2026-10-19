@@ -113,10 +113,10 @@ export default function Navbar({ settings }) {
                 isScrolled
                   ? settings?.data?.logo
                     ? `${baseUriBackend}${settings.data.logo}`
-                    : "/logo_black.png"
+                    : "/star_logo_black.png?v=2"
                   : settings?.data?.logoWhite
                     ? `${baseUriBackend}${settings.data.logoWhite}`
-                    : "/logo_white.png"
+                    : "/star_logo_white.png?v=2"
               }
               alt={settings?.websiteName || "Star Solutions BD"}
               width={240}
@@ -242,10 +242,10 @@ export default function Navbar({ settings }) {
                   isScrolled
                     ? settings?.data?.logo
                       ? `${baseUriBackend}${settings.data.logo}`
-                      : "/logo_black.png"
+                      : "/star_logo_black.png?v=2"
                     : settings?.data?.logoWhite
                       ? `${baseUriBackend}${settings.data.logoWhite}`
-                      : "/logo_white.png"
+                      : "/star_logo_white.png?v=2"
                 }
                 alt={settings?.websiteName || "Star Solutions BD"}
                 width={240}

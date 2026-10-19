@@ -64,7 +64,7 @@ export async function generateMetadata() {
           ]
         : [
             {
-              url: `${siteConfig.domain}/logo_white.png`,
+              url: `${siteConfig.domain}/star_logo_white.png`,
               width: 1200,
               height: 630,
               alt: `${siteConfig.brandName} - Custom Software & IT Solutions`,
@@ -80,7 +80,7 @@ export async function generateMetadata() {
       creator: "@starsolutionsbd",
       images: settings.openGraphImage
         ? [`${baseUriBackend}${settings.openGraphImage}`]
-        : [`${siteConfig.domain}/logo_white.png`],
+        : [`${siteConfig.domain}/star_logo_white.png`],
     },
     icons: {
       icon: [

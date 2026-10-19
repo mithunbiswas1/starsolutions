@@ -12,8 +12,8 @@ export const siteConfig = {
   domainName: "starsolutionsbd.com",
   url: "https://starsolutionsbd.com",
   canonicalUrl: "https://starsolutionsbd.com",
-  logo: "https://starsolutionsbd.com/logo_white.png",
-  favicon: "/favicon.ico",
+  logo: "https://starsolutionsbd.com/star_logo_white.png",
+  favicon: "/favicon.ico?v=2",
 
   tagline: "Leading Custom Software & IT Solutions Company in Bangladesh",
   shortDescription:
@@ -91,10 +91,10 @@ export const siteConfig = {
       url: "https://starsolutionsbd.com",
       logo: {
         "@type": "ImageObject",
-        url: "https://starsolutionsbd.com/logo_white.png",
+        url: "https://starsolutionsbd.com/star_logo_white.png",
         caption: "Star Solutions BD Logo",
       },
-      image: "https://starsolutionsbd.com/logo_white.png",
+      image: "https://starsolutionsbd.com/star_logo_white.png",
       email: "info@starsolutionsbd.com",
       telephone: "+880 1700-000000",
       address: {
@@ -133,7 +133,7 @@ export const siteConfig = {
       "@type": "ProfessionalService",
       "@id": "https://starsolutionsbd.com/#localbusiness",
       name: "Star Solutions BD",
-      image: "https://starsolutionsbd.com/logo_white.png",
+      image: "https://starsolutionsbd.com/star_logo_white.png",
       url: "https://starsolutionsbd.com",
       telephone: "+880 1700-000000",
       priceRange: "$$",
